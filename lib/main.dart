@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
+import 'package:noto/features/lists/widgets/list_card.dart';
+import 'package:noto/features/lists/widgets/empty_list_view.dart';
+
 void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
-    );
-  }
+  runApp(
+    MaterialApp(
+      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.teal),
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Mis listas')),
+        body: EmptyListsView(onCreatePressed: () {}),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
+        ),
+      ),
+    ),
+  );
 }
